@@ -8,8 +8,7 @@
 // Unpkg imports
 const Web3Modal = window.Web3Modal.default;
 const WalletConnectProvider = window.WalletConnectProvider.default;
-const EvmChains = window.EvmChains;
-const Fortmatic = window.Fortmatic;
+// const Fortmatic = window.Fortmatic;
 
 // Web3modal instance
 let web3Modal;
@@ -25,7 +24,7 @@ let selectedAccount;
  */
 function init() {
 	console.log("WalletConnectProvider is", WalletConnectProvider);
-	console.log("Fortmatic is", Fortmatic);
+	// console.log("Fortmatic is", Fortmatic);
 
 	// Tell Web3modal what providers we have available.
 	// Built-in web browser provider (only one can exist as a time)
@@ -39,13 +38,13 @@ function init() {
 			},
 		},
 
-		fortmatic: {
-			package: Fortmatic,
-			options: {
-				// please change according to your own Fortmatic key
-				key: "pk_test_391E26A3B43A3350",
-			},
-		},
+		// fortmatic: {
+		// 	package: Fortmatic,
+		// 	options: {
+		// 		// please change according to your own Fortmatic key
+		// 		key: "pk_test_391E26A3B43A3350",
+		// 	},
+		// },
 	};
 
 	web3Modal = new Web3Modal({
@@ -64,8 +63,7 @@ async function fetchAccountData() {
 	console.log("Web3 instance is", web3);
 
 	// Get connected chain id from Ethereum node
-	const chainId = await web3.eth.getChainId();
-	console.log("EvmChains - ", EvmChains);
+	// const chainId = await web3.eth.getChainId();
 	// Load chain information over an HTTP API
 	// const chainData = await EvmChains.getChain(chainId);
 	// document.querySelector("#network-name").textContent = chainData.name;
